@@ -1,13 +1,11 @@
 FROM node:16.18
 
-ENV PORT=3001
+COPY . /react-client
 
-COPY . /Simple-Flask-React-App
-
-WORKDIR /simple-flask-react-app
+WORKDIR /react-client
 
 RUN npm install
 
 EXPOSE ${PORT}
 
-CMD ["npm", "start"]
+CMD ["npm", "start", "--port=3000"]
